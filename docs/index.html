@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>PureBox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content=""><!-- Le styles -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/docs.css" rel="stylesheet">
+	<link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+
+	<link href="../skins/arrow.css" rel="stylesheet">
+	<link href="../skins/metro/pb.css" rel="stylesheet" id="skin"><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]--> <!-- Le fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<!-- Navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="index.html">PureBox</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="example.html">Examples</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container"><!-- Docs nav -->
+		<div class="row">
+			<div class="span3 bs-docs-sidebar">
+				<ul class="nav nav-list bs-docs-sidenav">
+					<li><a href="#purebox-invoke"><i class="icon-chevron-right"></i>1. 调用方式</a></li>
+					<li><a href="#purebox-fixed"><i class="icon-chevron-right"></i>2. 静止定位</a></li>
+					<li><a href="#purebox-head-foot"><i class="icon-chevron-right"></i>3. 自定义标题栏，按钮栏</a></li>
+					<li><a href="#purebox-btn-callback"><i class="icon-chevron-right"></i>4. 按钮回调事件</a></li>
+					<li><a href="#purebox-alert-confirm"><i class="icon-chevron-right"></i>5. 提示框和确认框</a></li>
+					<li><a href="#purebox-resize"><i class="icon-chevron-right"></i>6. 是否可以调节尺寸</a></li>
+					<li><a href="#purebox-drag"><i class="icon-chevron-right"></i>7. 是否拖拽</a></li>
+					<li><a href="#purebox-mask"><i class="icon-chevron-right"></i>8. 是否遮罩显示</a></li>
+				</ul>
+			</div>
+
+			<div class="span9"><!-- Download -->
+				<section id="purebox-invoke">
+					<div class="page-header">
+						<h5>1. 简单调用，两种方式，工具集或者包装集</h5>
+					</div>
+<pre class="prettyprint linenums">
+​$('#purebox').click(function() {
+	$.pb({
+		id : 'purebox',
+		title : '标题',
+		content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。'
+	});
+});
+</pre>
+<pre class="prettyprint linenums">
+​$('#purebox').pb({
+	id : 'purebox',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。'
+});
+</pre>
+					<button class="btn btn-primary" id="purebox">purebox</button>
+				</section>
+
+				<section id="purebox-fixed">
+					<div class="page-header">
+						<h5>2. 是否静止定位</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-fixed-true').pb({
+	id : 'idialog',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	fixed:true
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-fixed-true">purebox-fixed-true</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-fixed-false').pb({
+	id : 'idialog',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	fixed:false
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-fixed-false">purebox-fixed-false</button>
+				</section>
+
+				<section id="purebox-head-foot">
+					<div class="page-header">
+						<h5>3. 自定义标题栏，按钮栏，按钮</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-no-head').pb({
+	id : 'purebox-no-head',
+	title : 'purebox-no-head',
+	head : false,
+	content : $('#show')
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-no-head">purebox-no-head</button>
+
+
+<pre class="prettyprint linenums">
+$('#purebox-no-xbtn').pb({
+	id : 'purebox-no-xbtn',
+	title : 'purebox-no-xbtn',
+	xBtn : false,
+	content : $('#show')
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-no-xbtn">purebox-no-xbtn</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-no-foot').pb({
+	id : 'purebox-no-foot',
+	title : 'purebox-no-foot',
+	foot : false,
+	content : $('#show')
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-no-foot">purebox-no-foot</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-no-cancelBtn').pb({
+	id : 'purebox-no-foot',
+	title : 'purebox-no-foot',
+	cBtn : false,
+	content : $('#show')
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-no-cancelBtn">purebox-no-cancelBtn</button>
+				</section>
+
+				<section id="purebox-btn-callback">
+					<div class="page-header">
+						<h5>4. 按钮回调事件</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-onClose').pb({
+	id : 'purebox-onClose',
+	title : 'purebox-onClose',
+	content : $('#show'),
+	onClose : onClose
+});
+function onClose() {
+	alert('close');
+}
+</pre>
+					<button class="btn btn-primary" id="purebox-onClose">purebox-onClose</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-onOk').pb({
+	id : 'purebox-onOk',
+	title : 'purebox-onOk',
+	content : $('#show'),
+	onOk : onOk
+});
+function onOk() {
+	alert('ok');
+}
+</pre>
+					<button class="btn btn-primary" id="purebox-onOk">purebox-onOk</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-onCancel').pb({
+	id : 'purebox-onCancel',
+	title : 'purebox-onCancel',
+	content : $('#show'),
+	onCancel : onCancel
+});
+function onCancel() {
+	alert('cancel');
+}
+</pre>
+					<button class="btn btn-primary" id="purebox-onCancel">purebox-onCancel</button>
+				</section>
+
+				<section id="purebox-alert-confirm">
+					<div class="page-header">
+						<h5>5. 提示框和确认框</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-alert').click(function() {
+	$.pb.alert("好雨知时节， 当春乃发生。<br>随风潜入夜， 润物细无声。", function() {
+		alert("alert");
+	});
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-alert">purebox-alerte</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-confirm').click(function() {
+	$.pb.confirm("好雨知时节， 当春乃发生。", function() {
+		alert("confirmed");
+	});
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-confirm">purebox-confirm</button>
+				</section>
+
+				<section id="purebox-resize">
+					<div class="page-header">
+						<h5>6. 是否可以调节尺寸</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-resize-true').pb({
+	id : 'purebox-resize-true',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	resize : true
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-resize-true">purebox-resize-true</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-resize-false').pb({
+	id : 'purebox-resize-false',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	resize : false
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-resize-false">purebox-resize-false</button>
+				</section>
+
+				<section id="purebox-drag">
+					<div class="page-header">
+						<h5>7. 是否拖拽</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-drag-true').pb({
+	id : 'purebox-drag-true',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	drag : true
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-drag-true">purebox-drag-true</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-drag-false').pb({
+	id : 'purebox-drag-false',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	drag : false
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-drag-false">purebox-drag-false</button>
+				</section>
+
+				<section id="purebox-mask">
+					<div class="page-header">
+						<h5>8. 是否遮罩显示</h5>
+					</div>
+<pre class="prettyprint linenums">
+$('#purebox-mask-true').pb({
+	id : 'purebox-mask-true',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	mask : true
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-mask-true">purebox-mask-true</button>
+
+<pre class="prettyprint linenums">
+$('#purebox-mask-false').pb({
+	id : 'purebox-mask-false',
+	title : '标题',
+	content : '好雨知时节， 当春乃发生。随风潜入夜， 润物细无声。',
+	mask : false
+});
+</pre>
+					<button class="btn btn-primary" id="purebox-mask-false">purebox-mask-false</button>
+
+				</section>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<p>Designed and built with all the love in the world by <a
+				href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a
+				href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+		</div>
+	</footer>
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap-transition.js"></script>
+	<script src="js/bootstrap-alert.js"></script>
+	<script src="js/bootstrap-modal.js"></script>
+	<script src="js/bootstrap-dropdown.js"></script>
+	<script src="js/bootstrap-scrollspy.js"></script>
+	<script src="js/bootstrap-tab.js"></script>
+	<script src="js/bootstrap-tooltip.js"></script>
+	<script src="js/bootstrap-popover.js"></script>
+	<script src="js/bootstrap-button.js"></script>
+	<script src="js/bootstrap-collapse.js"></script>
+	<script src="js/bootstrap-carousel.js"></script>
+	<script src="js/bootstrap-typeahead.js"></script>
+	<script src="js/bootstrap-affix.js"></script>
+	<script src="js/holder/holder.js"></script>
+	<script src="js/google-code-prettify/prettify.js"></script>
+	<script src="js/application.js"></script>
+	
+	<script src="../purebox.js"></script>
+	<script src="../jquery.resizable.js"></script>
+</body>
+</html>

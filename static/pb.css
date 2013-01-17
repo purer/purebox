@@ -1,0 +1,125 @@
+@charset "utf-8";
+.pb {
+	position: absolute;
+	text-align:left;
+	border: 2px solid #5CB0DF;
+	/*border-radius: 2px 2px 2px 2px;
+	box-shadow: 0 0 2px 2px #848484;*/
+	z-index: 2209;
+	left: 400px; 
+	top: 10px; 
+	width: 300px;
+	font-size: 14px;
+}
+
+.pb2 {
+	position: absolute;
+	text-align:left;
+	border: 2px solid #5CB0DF;
+	/*border-radius: 2px 2px 2px 2px;
+	box-shadow: 0 0 2px 2px #848484;*/
+	z-index: 2209;
+	left: 400px; 
+	top: 200px; 
+	width: 300px;
+	font-size: 14px;
+}
+.pb-head {
+	background-color: #5CB0DF;
+	color: #FFFFFF;
+	cursor: move;
+	height: 25px;
+	line-height:24px;
+	font-weight:bold;
+	padding-left:5px;
+}
+.pb-close {
+	height:15px;
+	width:15px;
+	line-height:24px;
+	float:right;
+	padding-left:5px;
+}
+.pb-close:hover {
+	color:red;
+	cursor:pointer;
+}
+.pb-body {
+	width:100%;
+	height:100%;
+}
+.pb-content {
+	height: 80px;
+	/*text-indent:2em;*/
+	overflow-y: auto;
+	background-color: #F6F6F6;
+}
+.pb-foot {
+	background-color: #F6F6F6;
+	border-top: 1px solid #DADEE5;
+	height: 31px;
+	line-height:25px;
+}
+/*
+button.button {
+    background-color: #CCCCCC;
+    border: 1px solid transparent;
+    color: #353535;
+    cursor: pointer;
+    display: inline-block;
+    height: 28px;
+    margin: 2px 3px 2px 3px;
+    min-width: 60px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+	font-weight: bold;
+	float:right;
+}
+.pb-ok-btn {
+	background-color: #F69B00 !important;
+	color: #FFFFFF;
+    white-space: nowrap;
+}*/
+
+a.button {
+    cursor: pointer;
+	display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 10px;
+    padding: 0 20px;
+	float:right;
+	margin: 2px 3px;
+	font-size:14px;
+}
+
+.bluebtn {
+    background-color: #6CBDEC;
+    border: 1px solid #5EAFDE;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+}
+a.bluebtn {
+    color: #FFFFFF;
+}
+a.bluebtn:hover {
+    background-color: #5CB0DF;
+    border: 1px solid #50A2D1;
+    color: #FFFFFF;
+}
+
+.graybtn {
+    background-color: #F6F6F6;
+    border: 1px solid #E4E5E7;
+    border-radius: 2px 2px 2px 2px;
+    color: #000000;
+    cursor: pointer;
+}
+a.graybtn {
+    color: #000000;
+}
+a.graybtn:hover {
+    color: #515151;
+}
