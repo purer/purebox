@@ -478,6 +478,19 @@ footer a:hover {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
 
+#dynamic-to-top {
+    background: url(../images/top.gif) repeat scroll 0 0 transparent;
+    bottom: 20px;
+    display: none;
+    height: 44px;
+    left: auto;
+    position: fixed;
+    right: 20px;
+    top: auto;
+    width: 44px;
+    z-index: 90;
+}
+
 @font-face {
   font-family: 'Architects Daughter';
   font-style: normal;
