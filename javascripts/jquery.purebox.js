@@ -1,5 +1,8 @@
 /**
- * 轻量弹出层，结构简单，样式简洁，接口丰富，满足轻量级的应用场景
+ * jQuery弹出层插件，简单精致，结构简单，样式简洁，接口丰富，满足轻量应用
+ * email: tianshaojie@msn.com
+ * date: 2013-01-15
+ * version: 1.0.0
  */
 (function($) {
 	var
@@ -314,13 +317,10 @@
 })(window.jQuery);
 
 /**
- * 带指示箭头的提示框
- * 跟谁目标元素
- * 动态设置箭头方向：up,down,left,right
- * 关闭回调时间
- * 提示框位置，上下左右，根据目标元素和浏览器左右间距，自动使用提示框位置
- * 提示框对齐方式，上下或者左右对齐
- * 箭头位置自动判断
+ * jQuery箭头指示提示框
+ * email: tianshaojie@msn.com
+ * date: 2013-01-15
+ * version: 1.0.0
  */
 (function($) {
 	var max = Math.max,
