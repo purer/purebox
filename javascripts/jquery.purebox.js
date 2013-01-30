@@ -317,7 +317,7 @@
 })(window.jQuery);
 
 /**
- * jQuery箭头指示提示框
+ * jQuery带箭头的提示框
  * email: tianshaojie@msn.com
  * date: 2013-01-15
  * version: 1.0.0
